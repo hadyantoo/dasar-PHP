@@ -1,0 +1,17 @@
+
+$connect = mysqli_connect("localhost", "root", "", "login");
+// digunakan untuk koneksi ke database, ("nama host", "username db", "password db", "nama tabel")
+
+$query = mysqli_query($connect, "SELECT * FROM siswa");
+// melakukan query database yang berfungsi untuk menyeleksi/menampilkans semua isi di dalam tabel siswa
+
+$cek = mysqli_num_rows($query);
+// num_rows berfungsi untuk menghitung jumlah baris pada tabel setelah melakukan query select * from
+
+$arrdata = mysqli_fetch_array($query);
+// data yang sudah ditemukan setelah melakukan query select, di buat menjadi array dengan perintah di atas,
+$arrdata = mysqli_fetch_assoc($query);
+// fungsinya mirip seperti fetch_array, akan tetapi array yang di buat akan menjadi array asosiatif,
+
+$query = mysqli_query($connect, "INSERT INTO `siswa` (`id`, `nama`, `kelas`, `nilai`) VALUES (NULL, '$nama', '$kelas', '$nilai')");
+// berfungsi untuk input data baru ke dalam tabel siswa
