@@ -15,3 +15,6 @@ $arrdata = mysqli_fetch_assoc($query);
 
 $query = mysqli_query($connect, "INSERT INTO `siswa` (`id`, `nama`, `kelas`, `nilai`) VALUES (NULL, '$nama', '$kelas', '$nilai')");
 // berfungsi untuk input data baru ke dalam tabel siswa
+
+$query = mysqli_query($connect, "DELETE FROM siswa WHERE `siswa`.`id` = '$id'");
+// query untuk menghapus data di tabel dengan pencarian berdasarkan id
